@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hair Salon - Design Concepts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Noto+Sans+JP:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            /* Core Palette */
+            --salon-green: #3E5C4A;
+            --warm-cream: #FDFDFB;
+            --deep-slate: #2C3E50;
+            --soft-gold: #D4AF37;
+
+            /* Fonts */
+            --font-serif: 'Playfair Display', serif;
+            --font-sans: 'Inter', 'Noto Sans JP', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .presentation-header {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: #fff;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .presentation-header h1 {
+            font-family: var(--font-serif);
+            color: var(--deep-slate);
+            margin-bottom: 1rem;
+        }
+
+        .presentation-header p {
+            max-width: 600px;
+            margin: 0 auto;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .concept-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .concept-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            margin-bottom: 4rem;
+        }
+
+        .concept-info {
+            padding: 2rem 3rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .concept-info h2 {
+            font-family: var(--font-serif);
+            color: var(--deep-slate);
+            margin-top: 0;
+            font-size: 1.8rem;
+        }
+
+        .concept-desc {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .palette {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .color-swatch {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        .swatch-box {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        /* Mockup Window UI */
+        .mockup-window {
+            background: #e0e0e0;
+            border-radius: 8px 8px 0 0;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            padding: 0 15px;
+            gap: 6px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .dot.red {
+            background: #ff5f56;
+        }
+
+        .dot.yellow {
+            background: #ffbd2e;
+        }
+
+        .dot.green {
+            background: #27c93f;
+        }
+
+        /* General Mockup Styles */
+        .mockup-canvas {
+            position: relative;
+            width: 100%;
+            height: 600px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .mock-header {
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .mock-logo {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .mock-nav {
+            display: flex;
+            gap: 2rem;
+            font-size: 0.9rem;
+            font-weight: 400;
+        }
+
+        .mock-hero {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 4rem;
+            position: relative;
+        }
+
+        .mock-hero-content {
+            z-index: 2;
+            max-width: 500px;
+        }
+
+        .mock-h1 {
+            font-family: var(--font-serif);
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+
+        .mock-p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .mock-btn {
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        /* CONCEPT 1: Organic & Warm */
+        .canvas-1 {
+            background-color: var(--warm-cream);
+            color: var(--deep-slate);
+        }
+
+        .canvas-1 .mock-logo {
+            color: var(--salon-green);
+        }
+
+        .canvas-1 .mock-nav div {
+            color: var(--deep-slate);
+            opacity: 0.8;
+        }
+
+        .canvas-1 .mock-hero-image {
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
+            width: 50%;
+            background: linear-gradient(to right, var(--warm-cream) 0%, transparent 20%), url('https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?q=80&w=1000&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .canvas-1 .mock-hero-content {
+            align-self: center;
+            margin-right: auto;
+        }
+
+        .canvas-1 .mock-btn {
+            background-color: var(--salon-green);
+            color: var(--warm-cream);
+            border: 1px solid var(--salon-green);
+        }
+
+        /* CONCEPT 2: Luxury Dark (Deep Slate) */
+        .canvas-2 {
+            background-color: var(--deep-slate);
+            color: var(--warm-cream);
+        }
+
+        .canvas-2 .mock-logo {
+            color: var(--soft-gold);
+        }
+
+        .canvas-2 .mock-nav div {
+            color: var(--warm-cream);
+            opacity: 0.8;
+        }
+
+        .canvas-2 .mock-hero-image {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.95)), url('https://images.unsplash.com/photo-1562322140-8baeececf3df?q=80&w=1000&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            z-index: 0;
+        }
+
+        .canvas-2 .mock-hero-content {
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .canvas-2 .mock-h1 {
+            color: var(--soft-gold);
+        }
+
+        .canvas-2 .mock-btn {
+            background-color: transparent;
+            color: var(--soft-gold);
+            border: 1px solid var(--soft-gold);
+        }
+
+        /* CONCEPT 3: Salon Green Bold & Minimal */
+        .canvas-3 {
+            background-color: var(--salon-green);
+            color: var(--warm-cream);
+        }
+
+        .canvas-3 .mock-logo {
+            color: var(--warm-cream);
+        }
+
+        .canvas-3 .mock-nav div {
+            color: var(--warm-cream);
+            opacity: 0.8;
+        }
+
+        .canvas-3 .mock-hero-content {
+            display: flex;
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            align-items: center;
+            gap: 4rem;
+        }
+
+        .canvas-3 .text-box {
+            flex: 1;
+        }
+
+        .canvas-3 .img-box {
+            flex: 1;
+            height: 400px;
+            background: url('https://images.unsplash.com/photo-1595476108010-b4d1f10d5e43?q=80&w=1000&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            border-radius: 200px 200px 0 0;
+            border: 2px solid var(--soft-gold);
+            position: relative;
+        }
+
+        .canvas-3 .mock-h1 {
+            font-size: 3rem;
+        }
+
+        .canvas-3 .mock-btn {
+            background-color: var(--warm-cream);
+            color: var(--salon-green);
+            border: 1px solid var(--warm-cream);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="presentation-header">
+        <h1>Design Concepts & Mockups</h1>
+        <p>設計書にある4つのブランドカラー（Salon Green, Warm Cream, Deep Slate, Soft Gold）の比率や使い方を変え、3つの異なるデザインコンセプト（UIモックアップ）を作成しました。
+        </p>
+    </header>
+
+    <div class="concept-container">
+
+        <!-- CONCEPT 1 -->
+        <div class="concept-card">
+            <div class="concept-info">
+                <h2>Concept 1: Organic & Warm (ナチュラル＆温もり)</h2>
+                <p class="concept-desc">
+                    <strong>コンセプト:</strong> Warm Creamを背景全面に使用し、清潔感と温かみのある余白を活かしたデザインです。Salon
+                    Greenをロゴやボタンのアクセントとして配置し、「日本人美容師」としての繊細さや自然体な美しさを表現します。一番標準的で、親しみやすさと信頼感を兼ね備えたレイアウトです。
+                </p>
+                <div class="palette">
+                    <div class="color-swatch">
+                        <div class="swatch-box" style="background: var(--warm-cream);"></div>Warm Cream (Main)
+                    </div>
+                    <div class="color-swatch">
+                        <div class="swatch-box" style="background: var(--deep-slate);"></div>Deep Slate (Text)
+                    </div>
+                    <div class="color-swatch">
+                        <div class="swatch-box" style="background: var(--salon-green);"></div>Salon Green (Accent)
+                    </div>
+                </div>
+            </div>
+            <div class="mockup-window">
+                <div class="dot red"></div>
+                <div class="dot yellow"></div>
+                <div class="dot green"></div>
+            </div>
+            <div class="mockup-canvas canvas-1">
+                <div class="mock-header">
+                    <div class="mock-logo">AYAKA SALON</div>
+                    <div class="mock-nav">
+                        <div>Concept</div>
+                        <div>Menu</div>
+                        <div>Book</div>
+                    </div>
+                </div>
+                <div class="mock-hero">
+                    <div class="mock-hero-image"></div>
+                    <div class="mock-hero-content">
+                        <h1 class="mock-h1">Discover Your<br>True Beauty.</h1>
+                        <p class="mock-p">ゴールドコーストのプライベートサロン。<br>あなたに最適なスタイルと、心安らぐ時間を提供します。</p>
+                        <a href="#" class="mock-btn">Book Appointment</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONCEPT 2 -->
+        <div class="concept-card">
+            <div class="concept-info">
+                <h2>Concept 2: Luxury & Elegant (高級感＆エレガント)</h2>
+                <p class="concept-desc">
+                    <strong>コンセプト:</strong> Deep Slate（深いネイビー・グレー）を基調とし、リッチで落ち着いた大人向けのサロンを演出。文字やボタンにSoft
+                    Goldを効果的に使用することで、確かな技術力とラグジュアリーな雰囲気を強調します。客単価の高いメニューや、特別な非日常空間を求めるユーザーに刺さるデザインです。
+                </p>
+                <div class="palette">
+                    <div class="color-swatch">
+                        <div class="swatch-box" style="background: var(--deep-slate);"></div>Deep Slate (Main)
+                    </div>
+                    <div class="color-swatch">
+                        <div class="swatch-box" style="background: var(--warm-cream);"></div>Warm Cream (Text)
+                    </div>
+                    <div class="color-swatch">
+                        <div class="swatch-box" style="background: var(--soft-gold);"></div>Soft Gold (Accent)
+                    </div>
+                </div>
+            </div>
+            <div class="mockup-window">
+                <div class="dot red"></div>
+                <div class="dot yellow"></div>
+                <div class="dot green"></div>
+            </div>
+            <div class="mockup-canvas canvas-2">
+                <div class="mock-hero-image"></div>
+                <div class="mock-header">
+                    <div class="mock-logo">AYAKA SALON</div>
+                    <div class="mock-nav">
+                        <div>Concept</div>
+                        <div>Menu</div>
+                        <div>Book</div>
+                    </div>
+                </div>
+                <div class="mock-hero">
+                    <div class="mock-hero-content">
+                        <h1 class="mock-h1">Elevate Your Style.</h1>
+                        <p class="mock-p">洗練された技術と上質な空間。<br>あなただけのプライベートな美容体験を。</p>
+                        <a href="#" class="mock-btn">Book Appointment</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONCEPT 3 -->
+        <div class="concept-card">
+            <div class="concept-info">
+                <h2>Concept 3: Bold & Minimalist (ブランドカラー強調＆モダン)</h2>
+                <p class="concept-desc">
+                    <strong>コンセプト:</strong> テーマカラーであるSalon Greenを大胆に背景に引き詰め、Warm
+                    Creamで抜け感を作ったモダンな構成です。画像にアーチ型などの切り抜き処理を施すことで、トレンド感と柔らかさを取り入れています。印象に残りやすく、SNSの雰囲気とも相性が良いデザインです。
+                </p>
+                <div class="palette">
+                    <div class="color-swatch">
+                        <div class="swatch-box" style="background: var(--salon-green);"></div>Salon Green (Main)
+                    </div>
+                    <div class="color-swatch">
+                        <div class="swatch-box" style="background: var(--warm-cream);"></div>Warm Cream (Text)
+                    </div>
+                    <div class="color-swatch">
+                        <div class="swatch-box" style="background: var(--soft-gold);"></div>Soft Gold (Line/Border)
+                    </div>
+                </div>
+            </div>
+            <div class="mockup-window">
+                <div class="dot red"></div>
+                <div class="dot yellow"></div>
+                <div class="dot green"></div>
+            </div>
+            <div class="mockup-canvas canvas-3">
+                <div class="mock-header">
+                    <div class="mock-logo">AYAKA SALON</div>
+                    <div class="mock-nav">
+                        <div>Concept</div>
+                        <div>Menu</div>
+                        <div>Book</div>
+                    </div>
+                </div>
+                <div class="mock-hero">
+                    <div class="mock-hero-content">
+                        <div class="text-box">
+                            <h1 class="mock-h1">Natural, <br>Beautiful You.</h1>
+                            <p class="mock-p">オーストラリアでも、<br>日本の丁寧な技術をそのままに。</p>
+                            <a href="#" class="mock-btn">Book Appointment</a>
+                        </div>
+                        <div class="img-box"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
