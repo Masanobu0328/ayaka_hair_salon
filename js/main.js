@@ -140,8 +140,9 @@ const translations = {
 
     // Hero
     hero_label: 'Japanese Hair Salon in Gold Coast',
-    hero_title: "Ayaka's Hair",
+    hero_title: 'No Name',
     hero_subtitle: 'Japanese precision and care,\nright here on the Gold Coast.',
+    hero_name_notice: '(Name under consideration)',
     hero_cta: 'Book Now',
     hero_cta2: 'View Menu',
 
@@ -228,7 +229,7 @@ const translations = {
     access_hours_closed: 'Closed',
 
     // Footer
-    footer_copyright: '© 2026 Ayaka\'s Hair. All rights reserved.',
+    footer_copyright: '© 2026 No Name. All rights reserved.',
   },
 
   ja: {
@@ -242,8 +243,9 @@ const translations = {
 
     // Hero
     hero_label: 'ゴールドコーストの日本人ヘアサロン',
-    hero_title: "Ayaka's Hair",
+    hero_title: 'No Name',
     hero_subtitle: '日本の繊細な技術と丁寧な接客を、\nゴールドコーストで。',
+    hero_name_notice: '（店名は現在検討中です）',
     hero_cta: '予約する',
     hero_cta2: 'メニューを見る',
 
@@ -330,7 +332,7 @@ const translations = {
     access_hours_closed: '定休日',
 
     // Footer
-    footer_copyright: "© 2026 Ayaka's Hair. All rights reserved.",
+    footer_copyright: "© 2026 No Name. All rights reserved.",
   }
 
 };
