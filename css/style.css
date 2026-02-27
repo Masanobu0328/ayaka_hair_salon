@@ -869,17 +869,13 @@ section {
    ACCESS
    ============================================ */
 .access-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  align-items: start;
+  display: block;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .access-map {
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-md);
-  aspect-ratio: 4/3;
+  display: none;
 }
 
 .access-map iframe {
