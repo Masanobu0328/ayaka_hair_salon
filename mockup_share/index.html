@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hair Salon - High-Fidelity Mobile Mockups</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <style>
+        /* ================================================
+           PRODUCTION REPLICA STYLES
+           ================================================ */
+        :root {
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Inter', 'Noto Sans JP', sans-serif;
+            --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            --radius-xl: 28px;
+            --radius-full: 100px;
+        }
+
+        * { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+
+        body {
+            font-family: var(--font-body);
+            margin: 0;
+            padding: 0;
+            background-color: #ededed;
+            color: #2C3E50;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .presentation-header {
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+            padding: 5rem 1.5rem 3rem;
+        }
+
+        .presentation-header h1 {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+
+        .presentation-header p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* --- Phone Mockup Frame --- */
+        .phone-container {
+            margin-bottom: 4rem;
+            width: 375px;
+            max-width: 95vw;
+            background: #fff;
+            border-radius: 50px;
+            padding: 12px;
+            box-shadow: 0 50px 100px rgba(0, 0, 0, 0.15);
+            border: 10px solid #111;
+            position: relative;
+        }
+
+        /* Notch simulation */
+        .phone-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 25px;
+            background: #111;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            z-index: 1001;
+        }
+
+        .phone-screen {
+            width: 100%;
+            height: 720px;
+            border-radius: 35px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            position: relative;
+            background: #fff;
+            scrollbar-width: none;
+        }
+        .phone-screen::-webkit-scrollbar { display: none; }
+
+        /* --- Scoped Theme Variables --- */
+        .theme-a {
+            --primary: #3E5C4A; /* Green */
+            --accent: #E67E22;  /* Orange */
+            --bg: #FDFDFB;      /* Cream */
+            --text: #2C3E50;
+            --overlay: rgba(62, 92, 74, 0.55);
+        }
+
+        .theme-b {
+            --primary: #5D4037; /* Brown */
+            --accent: #D35400;  /* Deep Orange */
+            --bg: #F5F1E9;      /* Sand */
+            --text: #3E2723;
+            --overlay: rgba(93, 64, 55, 0.65);
+        }
+
+        /* --- UI Components --- */
+        .m-nav {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1.8rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+        .m-logo { font-family: var(--font-heading); font-weight: 600; font-size: 1.2rem; color: #fff; letter-spacing: 0.5px; }
+        .m-hamburger { width: 24px; height: 16px; display: flex; flex-direction: column; justify-content: space-between; }
+        .m-hamburger span { display: block; height: 1.5px; width: 100%; background: #fff; }
+
+        .m-hero { height: 720px; width: 100%; position: relative; display: flex; align-items: center; justify-content: center; text-align: center; padding: 0 2rem; }
+        
+        /* EMBEDDED IMAGE DATA */
+        .m-hero-bg { 
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+            background-image: url('data:image/png;base64,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'); 
+            background-size: cover; background-position: center; 
+        }
+        
+        .m-hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: var(--overlay); }
+        .m-hero-content { position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center; }
+        .m-hero-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: #fff; margin-bottom: 1rem; opacity: 0.9; }
+        .m-hero-divider { width: 40px; height: 2px; background: var(--accent); margin-bottom: 1.5rem; }
+        .m-hero-title { font-family: var(--font-heading); font-size: 3.4rem; line-height: 1; margin-bottom: 1.2rem; color: #fff; font-weight: 500; }
+        .m-hero-subtitle { font-size: 1rem; line-height: 1.7; margin-bottom: 2.5rem; color: rgba(255, 255, 255, 0.9); }
+        
+        .m-btn { display: inline-flex; align-items: center; justify-content: center; padding: 1rem 2.5rem; border-radius: var(--radius-full); font-weight: 600; font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; transition: all var(--transition); border: 2px solid transparent; width: 100%; max-width: 280px; margin-bottom: 1rem; }
+        .btn-accent { background: var(--accent); color: #fff; }
+        .btn-outline { background: transparent; color: #fff; border-color: rgba(255, 255, 255, 0.6); }
+
+        .m-section { padding: 5rem 1.5rem; text-align: center; background: var(--bg); color: var(--text); position: relative; }
+        .m-section-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; display: block; }
+        .m-section-title { font-family: var(--font-heading); font-size: 2rem; margin-bottom: 1.2rem; font-weight: 500; }
+        .m-section-title::after { content: ''; display: block; width: 40px; height: 2px; background: var(--accent); margin: 1rem auto 0; }
+        .m-section-subtitle { font-size: 1rem; line-height: 1.8; opacity: 0.7; margin: 0 auto 3rem; max-width: 300px; }
+
+        /* --- Theme-colored Background Section (Reservation) --- */
+        .m-section-primary { padding: 5rem 1.5rem; text-align: center; background: var(--primary); color: #fff; position: relative; }
+        .m-section-primary .m-section-label { color: rgba(255,255,255,0.8); }
+        .m-section-primary .m-section-title { color: #fff; }
+        .m-section-primary .m-section-title::after { background: var(--accent); }
+        .m-section-primary .m-section-subtitle { color: rgba(255,255,255,0.9); }
+        .m-section-primary .m-btn { background: var(--accent); color: #fff; }
+
+        /* --- Values Section --- */
+        .m-value-card { margin-bottom: 3.5rem; }
+        .m-value-icon { margin: 0 auto 1.5rem; color: var(--accent); }
+        .m-value-h3 { font-size: 1.2rem; margin-bottom: 0.8rem; font-family: var(--font-heading); font-weight: 600; }
+        .m-value-p { font-size: 0.95rem; line-height: 1.8; opacity: 0.8; }
+
+        /* --- Menu Section --- */
+        .m-menu-category { text-align: left; margin-top: 2rem; }
+        .m-menu-cat-title { font-weight: 600; font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 1.5rem; color: var(--accent); border-bottom: 1px solid rgba(0,0,0,0.05); padding-bottom: 0.5rem; }
+        .m-menu-item { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1.2rem; }
+        .m-menu-name { font-weight: 500; font-size: 1rem; }
+        .m-menu-dots { flex: 1; border-bottom: 1px dotted rgba(0,0,0,0.15); margin: 0 0.8rem; position: relative; top: -4px; }
+        .m-menu-price { font-weight: 600; font-size: 1rem; color: var(--primary); }
+
+        .m-footer { padding: 4rem 1.5rem; text-align: center; background: #1a1a1a; color: #fff; }
+        .m-footer-logo { font-family: var(--font-heading); font-size: 1.3rem; margin-bottom: 1.2rem; letter-spacing: 1px; }
+        .m-footer-text { font-size: 0.8rem; opacity: 0.5; line-height: 1.8; }
+
+        /* --- Color Details Card --- */
+        .color-info-card {
+            width: 375px;
+            max-width: 95vw;
+            background: #fff;
+            border-radius: 24px;
+            padding: 2.5rem;
+            margin-bottom: 6rem;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+            border: 1px solid #eee;
+        }
+        .color-info-card h2 { font-family: var(--font-heading); font-size: 1.4rem; margin-bottom: 1.8rem; text-align: center; border-bottom: 2px solid #f0f0f0; padding-bottom: 0.5rem; }
+        .swatch-item { display: flex; align-items: center; gap: 1.2rem; margin-bottom: 1.2rem; }
+        .swatch-box { width: 50px; height: 50px; border-radius: 12px; border: 1px solid #eee; flex-shrink: 0; }
+        .swatch-hex { font-family: monospace; font-weight: 700; color: #1a1a1a; display: block; font-size: 1.05rem; }
+        .swatch-label { font-size: 0.7rem; color: #888; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
+        .design-intent { font-size: 0.9rem; color: #555; line-height: 1.8; padding-top: 1.5rem; border-top: 1px solid #f0f0f0; margin-top: 1rem; }
+
+        .concept-title { font-family: var(--font-heading); font-size: 2rem; margin: 4.5rem 0 2rem; text-align: center; font-weight: 600; }
+
+    </style>
+</head>
+
+<body>
+
+    <header class="presentation-header">
+        <h1>Design System Mockups</h1>
+        <p>全カラーコードの解説と、コンセプトごとのメインカラーを活かした予約セクションを配置しました。</p>
+    </header>
+
+    <!-- CONCEPT A -->
+    <h2 class="concept-title">Concept A: Botanical Fresh</h2>
+    <div class="phone-container">
+        <div class="phone-screen theme-a">
+            <nav class="m-nav">
+                <div class="m-logo">Ayaka's Hair</div>
+                <div class="m-hamburger"><span></span><span></span><span></span></div>
+            </nav>
+
+            <div class="m-hero">
+                <div class="m-hero-bg"></div><div class="m-hero-overlay"></div>
+                <div class="m-hero-content">
+                    <p class="m-hero-label">Japanese Hair Salon in Gold Coast</p>
+                    <div class="m-hero-divider"></div>
+                    <h1 class="m-hero-title">Ayaka's Hair</h1>
+                    <p class="m-hero-subtitle">Japanese precision and care,<br>right here on the Gold Coast.</p>
+                    <div class="m-hero-actions">
+                        <a href="#" class="m-btn btn-accent">Book Now</a>
+                        <a href="#" class="m-btn btn-outline">View Menu</a>
+                    </div>
+                </div>
+            </div>
+
+            <section class="m-section">
+                <span class="m-section-label">Our Values</span>
+                <h2 class="m-section-title">What We Value</h2>
+                <div class="m-value-card">
+                    <div class="m-value-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"></circle><circle cx="6" cy="18" r="3"></circle><line x1="20" y1="4" x2="8.12" y2="15.88"></line><line x1="14.47" y1="14.48" x2="20" y2="20"></line><line x1="8.12" y1="8.12" x2="12" y2="12"></line></svg>
+                    </div>
+                    <h3 class="m-value-h3">Precision Technique</h3>
+                    <p class="m-value-p">長年の研鑽を積んだ日本のカット技術で、一本一本の髪に魂を込めます。</p>
+                </div>
+            </section>
+
+            <!-- Reservation Emphasis (GREEN BACKGROUND for Concept A) -->
+            <section class="m-section-primary">
+                <span class="m-section-label">Reservation</span>
+                <h2 class="m-section-title">Book an Appointment</h2>
+                <p class="m-section-subtitle">Reserve your spot online — quick and easy.</p>
+                <a href="#" class="m-btn">Book Appointment</a>
+                <p style="font-size: 0.75rem; margin-top: 2rem; opacity: 0.85;">Cancellation Policy:<br>1日前まで無料 / 当日は100%</p>
+            </section>
+
+            <section class="m-section">
+                <span class="m-section-label">Services</span>
+                <h2 class="m-section-title">Menu</h2>
+                <div class="m-menu-category">
+                    <p class="m-menu-cat-title">Cut — Shampoo & Styling</p>
+                    <div class="m-menu-item"><div class="m-menu-name">Ladies Cut</div><span class="m-menu-dots"></span><div class="m-menu-price">$60</div></div>
+                    <div class="m-menu-item"><div class="m-menu-name">Mens Cut</div><span class="m-menu-dots"></span><div class="m-menu-price">$50</div></div>
+                </div>
+            </section>
+
+            <footer class="m-footer">
+                <div class="m-footer-logo">Ayaka's Hair</div>
+                <p class="m-footer-text">© 2026 Ayaka's Hair. All rights reserved.</p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Color Info A -->
+    <div class="color-info-card">
+        <h2>Concept A: Color Palette</h2>
+        <div class="swatch-item">
+            <div class="swatch-box" style="background: #3E5C4A;"></div>
+            <div class="swatch-text">
+                <span class="swatch-label">Primary Color</span>
+                <span class="swatch-hex">#3E5C4A</span>
+                <span style="font-size: 0.75rem; color: #666;">信頼感と自然を感じさせる深い緑。予約エリアの背景に使用。</span>
+            </div>
+        </div>
+        <div class="swatch-item">
+            <div class="swatch-box" style="background: #E67E22;"></div>
+            <div class="swatch-text">
+                <span class="swatch-label">Accent Color</span>
+                <span class="swatch-hex">#E67E22</span>
+                <span style="font-size: 0.75rem; color: #666;">ボタンや仕切り線に使用。フレッシュな活力を与えます。</span>
+            </div>
+        </div>
+        <div class="swatch-item">
+            <div class="swatch-box" style="background: #FDFDFB;"></div>
+            <div class="swatch-text">
+                <span class="swatch-label">Background Color</span>
+                <span class="swatch-hex">#FDFDFB</span>
+                <span style="font-size: 0.75rem; color: #666;">清潔感のある暖かいクリーム。広がりと落ち着きを演出。</span>
+            </div>
+        </div>
+        <div class="swatch-item">
+            <div class="swatch-box" style="background: rgba(62, 92, 74, 0.55);"></div>
+            <div class="swatch-text">
+                <span class="swatch-label">Overlay Color</span>
+                <span class="swatch-hex">rgba(62, 92, 74, 0.55)</span>
+                <span style="font-size: 0.75rem; color: #666;">ヒーロー画像の透かしに使用。写真にブランドの統一感を与えます。</span>
+            </div>
+        </div>
+        <div class="design-intent">
+            <strong>Design Strategy:</strong><br>
+            「ボタニカル＆フレッシュ」を掲げ、予約エリアにブランドの象徴である深緑を大胆に配置。信頼できる「プロの技術」を強調した構成です。
+        </div>
+    </div>
+
+
+    <!-- CONCEPT B -->
+    <h2 class="concept-title">Concept B: Earthy Warmth</h2>
+    <div class="phone-container">
+        <div class="phone-screen theme-b">
+            <nav class="m-nav">
+                <div class="m-logo">Ayaka's Hair</div>
+                <div class="m-hamburger"><span></span><span></span><span></span></div>
+            </nav>
+
+            <div class="m-hero">
+                <div class="m-hero-bg"></div><div class="m-hero-overlay"></div>
+                <div class="m-hero-content">
+                    <p class="m-hero-label">Japanese Hair Salon in Gold Coast</p>
+                    <div class="m-hero-divider"></div>
+                    <h1 class="m-hero-title">Ayaka's Hair</h1>
+                    <p class="m-hero-subtitle">Japanese precision and care,<br>right here on the Gold Coast.</p>
+                    <div class="m-hero-actions">
+                        <a href="#" class="m-btn btn-accent">Book Now</a>
+                        <a href="#" class="m-btn btn-outline">View Menu</a>
+                    </div>
+                </div>
+            </div>
+
+            <section class="m-section">
+                <span class="m-section-label">Our Values</span>
+                <h2 class="m-section-title">What We Value</h2>
+                <div class="m-value-card">
+                    <div class="m-value-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"></circle><circle cx="6" cy="18" r="3"></circle><line x1="20" y1="4" x2="8.12" y2="15.88"></line><line x1="14.47" y1="14.48" x2="20" y2="20"></line><line x1="8.12" y1="8.12" x2="12" y2="12"></line></svg>
+                    </div>
+                    <h3 class="m-value-h3">Precision Technique</h3>
+                    <p class="m-value-p">長年の研鑽を積んだ日本のカット技術で、一本一本の髪に魂を込めます。</p>
+                </div>
+            </section>
+
+            <!-- Reservation Emphasis (BROWN BACKGROUND for Concept B) -->
+            <section class="m-section-primary">
+                <span class="m-section-label">Reservation</span>
+                <h2 class="m-section-title">Book an Appointment</h2>
+                <p class="m-section-subtitle">Reserve your spot online — quick and easy.</p>
+                <a href="#" class="m-btn">Book Appointment</a>
+                <p style="font-size: 0.75rem; margin-top: 2rem; opacity: 0.85;">Cancellation Policy:<br>1日前まで無料 / 当日は100%</p>
+            </section>
+
+            <section class="m-section">
+                <span class="m-section-label">Services</span>
+                <h2 class="m-section-title">Menu</h2>
+                <div class="m-menu-category">
+                    <p class="m-menu-cat-title">Cut — Shampoo & Styling</p>
+                    <div class="m-menu-item"><div class="m-menu-name">Ladies Cut</div><span class="m-menu-dots"></span><div class="m-menu-price">$60</div></div>
+                    <div class="m-menu-item"><div class="m-menu-name">Mens Cut</div><span class="m-menu-dots"></span><div class="m-menu-price">$50</div></div>
+                </div>
+            </section>
+
+            <footer class="m-footer">
+                <div class="m-footer-logo">Ayaka's Hair</div>
+                <p class="m-footer-text">© 2026 Ayaka's Hair. All rights reserved.</p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Color Info B -->
+    <div class="color-info-card">
+        <h2>Concept B: Color Palette</h2>
+        <div class="swatch-item">
+            <div class="swatch-box" style="background: #5D4037;"></div>
+            <div class="swatch-text">
+                <span class="swatch-label">Primary Color</span>
+                <span class="swatch-hex">#5D4037</span>
+                <span style="font-size: 0.75rem; color: #666;">温かみと安心感のある深いブラウン。予約エリアの背景に使用。</span>
+            </div>
+        </div>
+        <div class="swatch-item">
+            <div class="swatch-box" style="background: #D35400;"></div>
+            <div class="swatch-text">
+                <span class="swatch-label">Accent Color</span>
+                <span class="swatch-hex">#D35400</span>
+                <span style="font-size: 0.75rem; color: #666;">テラコッタ調のオレンジ。深みのあるアクセントとして機能。</span>
+            </div>
+        </div>
+        <div class="swatch-item">
+            <div class="swatch-box" style="background: #F5F1E9;"></div>
+            <div class="swatch-text">
+                <span class="swatch-label">Background Color</span>
+                <span class="swatch-hex">#F5F1E9</span>
+                <span style="font-size: 0.75rem; color: #666;">落ち着いたサンドベージュ。リラックス効果を高めます。</span>
+            </div>
+        </div>
+        <div class="swatch-item">
+            <div class="swatch-box" style="background: rgba(93, 64, 55, 0.65);"></div>
+            <div class="swatch-text">
+                <span class="swatch-label">Overlay Color</span>
+                <span class="swatch-hex">rgba(93, 64, 55, 0.65)</span>
+                <span style="font-size: 0.75rem; color: #666;">ブラウン調の透かし。写真にアンティークで上質な雰囲気を与えます。</span>
+            </div>
+        </div>
+        <div class="design-intent">
+            <strong>Design Strategy:</strong><br>
+            「アース＆ウォーム」をテーマに、予約エリアを落ち着いた茶色で構成。ゆったりとしたプライベートな「自分時間」を大切にする層へ向けたデザインです。
+        </div>
+    </div>
+
+</body>
+</html>

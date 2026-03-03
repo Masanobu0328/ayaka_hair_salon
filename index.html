@@ -109,15 +109,8 @@
 
       <div class="values-grid reveal-stagger">
         <div class="value-card">
-          <div class="value-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="6" cy="6" r="3"></circle>
-              <circle cx="6" cy="18" r="3"></circle>
-              <line x1="20" y1="4" x2="8.12" y2="15.88"></line>
-              <line x1="14.47" y1="14.48" x2="20" y2="20"></line>
-              <line x1="8.12" y1="8.12" x2="12" y2="12"></line>
-            </svg>
+          <div class="value-img-wrapper">
+            <img src="images/value-1.png" alt="Precision Technique" class="value-img" loading="lazy" />
           </div>
           <h3 data-i18n="values_1_title">Precision Technique</h3>
           <p data-i18n="values_1_desc">Japanese cutting techniques refined through years of training. We pay attention
@@ -125,13 +118,8 @@
         </div>
 
         <div class="value-card">
-          <div class="value-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round">
-              <path
-                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
-              </path>
-            </svg>
+          <div class="value-img-wrapper">
+            <img src="images/value-2.png" alt="Personal Consultation" class="value-img" loading="lazy" />
           </div>
           <h3 data-i18n="values_2_title">Personal Consultation</h3>
           <p data-i18n="values_2_desc">We take the time to understand your hair, lifestyle, and goals before picking up
@@ -139,17 +127,16 @@
         </div>
 
         <div class="value-card">
-          <div class="value-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 3l2.8 7.2L22 13l-7.2 2.8L12 23l-2.8-7.2L2 13l7.2-2.8z"></path>
-            </svg>
+          <div class="value-img-wrapper">
+            <img src="images/value-3.png" alt="Relaxing Space" class="value-img" loading="lazy" />
           </div>
           <h3 data-i18n="values_3_title">Relaxing Space</h3>
           <p data-i18n="values_3_desc">A calm, private atmosphere where you can unwind and enjoy your salon experience.
           </p>
         </div>
       </div>
+
+
     </div>
   </section>
 
@@ -165,6 +152,11 @@
           depending on hair length.</p>
       </div>
 
+      <!-- Menu Banner -->
+      <div class="menu-banner-wrapper reveal">
+        <img src="images/menu-banner.jpg" alt="Salon Menu" class="content-banner-img" loading="lazy" />
+      </div>
+
       <!-- Tabs -->
       <div class="menu-tabs reveal">
         <button class="menu-tab active" data-category="cut" data-i18n="tab_cut">Cut</button>
@@ -174,133 +166,135 @@
         <button class="menu-tab" data-category="others" data-i18n="tab_others">Others</button>
       </div>
 
-      <!-- CUT -->
-      <div class="menu-category active" id="cat-cut">
-        <p class="menu-category-title" data-i18n="cat_cut_title">Cut — Includes Shampoo & Styling</p>
-        <div class="menu-item">
-          <div>
-            <div class="menu-item-name" data-i18n="menu_mens">Mens Cut</div>
+      <div class="menu-content-box reveal">
+        <!-- CUT -->
+        <div class="menu-category active" id="cat-cut">
+          <p class="menu-category-title" data-i18n="cat_cut_title">Cut — Includes Shampoo & Styling</p>
+          <div class="menu-item">
+            <div>
+              <div class="menu-item-name" data-i18n="menu_mens">Mens Cut</div>
+            </div>
+            <span class="menu-item-dots"></span>
+            <div class="menu-item-price">$50</div>
           </div>
-          <span class="menu-item-dots"></span>
-          <div class="menu-item-price">$50</div>
-        </div>
-        <div class="menu-item">
-          <div>
-            <div class="menu-item-name" data-i18n="menu_ladies">Ladies Cut</div>
+          <div class="menu-item">
+            <div>
+              <div class="menu-item-name" data-i18n="menu_ladies">Ladies Cut</div>
+            </div>
+            <span class="menu-item-dots"></span>
+            <div class="menu-item-price">$60</div>
           </div>
-          <span class="menu-item-dots"></span>
-          <div class="menu-item-price">$60</div>
         </div>
-      </div>
 
-      <!-- COLOR -->
-      <div class="menu-category" id="cat-color">
-        <p class="menu-category-title" data-i18n="cat_color_title">Color</p>
-        <div class="menu-item">
-          <div>
-            <div class="menu-item-name" data-i18n="menu_regrowth">Regrowth (~2cm)</div>
+        <!-- COLOR -->
+        <div class="menu-category" id="cat-color">
+          <p class="menu-category-title" data-i18n="cat_color_title">Color</p>
+          <div class="menu-item">
+            <div>
+              <div class="menu-item-name" data-i18n="menu_regrowth">Regrowth (~2cm)</div>
+            </div>
+            <span class="menu-item-dots"></span>
+            <div class="menu-item-price">$60</div>
           </div>
-          <span class="menu-item-dots"></span>
-          <div class="menu-item-price">$60</div>
-        </div>
-        <div class="menu-item">
-          <div>
-            <div class="menu-item-name" data-i18n="menu_fullcolor">Full Color</div>
-            <div class="menu-item-desc">S / M / L</div>
+          <div class="menu-item">
+            <div>
+              <div class="menu-item-name" data-i18n="menu_fullcolor">Full Color</div>
+              <div class="menu-item-desc">S / M / L</div>
+            </div>
+            <span class="menu-item-dots"></span>
+            <div class="menu-item-price">$80 – $120~</div>
           </div>
-          <span class="menu-item-dots"></span>
-          <div class="menu-item-price">$80 – $120~</div>
-        </div>
-        <div class="menu-item">
-          <div>
-            <div class="menu-item-name" data-i18n="menu_bleach_regrowth">Bleach Regrowth (~2cm)</div>
+          <div class="menu-item">
+            <div>
+              <div class="menu-item-name" data-i18n="menu_bleach_regrowth">Bleach Regrowth (~2cm)</div>
+            </div>
+            <span class="menu-item-dots"></span>
+            <div class="menu-item-price">$110</div>
           </div>
-          <span class="menu-item-dots"></span>
-          <div class="menu-item-price">$110</div>
-        </div>
-        <div class="menu-item">
-          <div>
-            <div class="menu-item-name" data-i18n="menu_fullbleach">Full Bleach</div>
-            <div class="menu-item-desc">S / M / L</div>
+          <div class="menu-item">
+            <div>
+              <div class="menu-item-name" data-i18n="menu_fullbleach">Full Bleach</div>
+              <div class="menu-item-desc">S / M / L</div>
+            </div>
+            <span class="menu-item-dots"></span>
+            <div class="menu-item-price">$130 – $170~</div>
           </div>
-          <span class="menu-item-dots"></span>
-          <div class="menu-item-price">$130 – $170~</div>
         </div>
-      </div>
 
-      <!-- PERM -->
-      <div class="menu-category" id="cat-perm">
-        <p class="menu-category-title" data-i18n="cat_perm_title">Perm</p>
-        <div class="menu-item">
-          <div>
-            <div class="menu-item-name" data-i18n="menu_point_perm">Point Perm</div>
+        <!-- PERM -->
+        <div class="menu-category" id="cat-perm">
+          <p class="menu-category-title" data-i18n="cat_perm_title">Perm</p>
+          <div class="menu-item">
+            <div>
+              <div class="menu-item-name" data-i18n="menu_point_perm">Point Perm</div>
+            </div>
+            <span class="menu-item-dots"></span>
+            <div class="menu-item-price">$60</div>
           </div>
-          <span class="menu-item-dots"></span>
-          <div class="menu-item-price">$60</div>
-        </div>
-        <div class="menu-item">
-          <div>
-            <div class="menu-item-name" data-i18n="menu_normal_perm">Normal Perm</div>
-            <div class="menu-item-desc">S / M / L</div>
+          <div class="menu-item">
+            <div>
+              <div class="menu-item-name" data-i18n="menu_normal_perm">Normal Perm</div>
+              <div class="menu-item-desc">S / M / L</div>
+            </div>
+            <span class="menu-item-dots"></span>
+            <div class="menu-item-price">$90 – $130~</div>
           </div>
-          <span class="menu-item-dots"></span>
-          <div class="menu-item-price">$90 – $130~</div>
-        </div>
-        <div class="menu-item">
-          <div>
-            <div class="menu-item-name" data-i18n="menu_twist_spiral">Twist / Spiral Perm</div>
-            <div class="menu-item-desc">S / M / L</div>
+          <div class="menu-item">
+            <div>
+              <div class="menu-item-name" data-i18n="menu_twist_spiral">Twist / Spiral Perm</div>
+              <div class="menu-item-desc">S / M / L</div>
+            </div>
+            <span class="menu-item-dots"></span>
+            <div class="menu-item-price">$100 – $140~</div>
           </div>
-          <span class="menu-item-dots"></span>
-          <div class="menu-item-price">$100 – $140~</div>
         </div>
-      </div>
 
-      <!-- STRAIGHT -->
-      <div class="menu-category" id="cat-straight">
-        <p class="menu-category-title" data-i18n="cat_straight_title">Straight</p>
-        <div class="menu-item">
-          <div>
-            <div class="menu-item-name" data-i18n="menu_point_straight">Point Straight</div>
+        <!-- STRAIGHT -->
+        <div class="menu-category" id="cat-straight">
+          <p class="menu-category-title" data-i18n="cat_straight_title">Straight</p>
+          <div class="menu-item">
+            <div>
+              <div class="menu-item-name" data-i18n="menu_point_straight">Point Straight</div>
+            </div>
+            <span class="menu-item-dots"></span>
+            <div class="menu-item-price">$100</div>
           </div>
-          <span class="menu-item-dots"></span>
-          <div class="menu-item-price">$100</div>
-        </div>
-        <div class="menu-item">
-          <div>
-            <div class="menu-item-name" data-i18n="menu_full_straight">Full Straight</div>
-            <div class="menu-item-desc">S / M / L</div>
+          <div class="menu-item">
+            <div>
+              <div class="menu-item-name" data-i18n="menu_full_straight">Full Straight</div>
+              <div class="menu-item-desc">S / M / L</div>
+            </div>
+            <span class="menu-item-dots"></span>
+            <div class="menu-item-price">$210 – $310~</div>
           </div>
-          <span class="menu-item-dots"></span>
-          <div class="menu-item-price">$210 – $310~</div>
-        </div>
-        <div class="menu-item">
-          <div>
-            <div class="menu-item-name" data-i18n="menu_acid_treatment">Acid Hair Treatment</div>
-            <div class="menu-item-desc">S / M / L</div>
+          <div class="menu-item">
+            <div>
+              <div class="menu-item-name" data-i18n="menu_acid_treatment">Acid Hair Treatment</div>
+              <div class="menu-item-desc">S / M / L</div>
+            </div>
+            <span class="menu-item-dots"></span>
+            <div class="menu-item-price">$110 – $150~</div>
           </div>
-          <span class="menu-item-dots"></span>
-          <div class="menu-item-price">$110 – $150~</div>
         </div>
-      </div>
 
-      <!-- OTHERS -->
-      <div class="menu-category" id="cat-others">
-        <p class="menu-category-title" data-i18n="cat_others_title">Others</p>
-        <div class="menu-item">
-          <div>
-            <div class="menu-item-name" data-i18n="menu_treatment">Treatment</div>
-            <div class="menu-item-desc">S / M / L</div>
+        <!-- OTHERS -->
+        <div class="menu-category" id="cat-others">
+          <p class="menu-category-title" data-i18n="cat_others_title">Others</p>
+          <div class="menu-item">
+            <div>
+              <div class="menu-item-name" data-i18n="menu_treatment">Treatment</div>
+              <div class="menu-item-desc">S / M / L</div>
+            </div>
+            <span class="menu-item-dots"></span>
+            <div class="menu-item-price">$20 – $40~</div>
           </div>
-          <span class="menu-item-dots"></span>
-          <div class="menu-item-price">$20 – $40~</div>
-        </div>
-        <div class="menu-item">
-          <div>
-            <div class="menu-item-name" data-i18n="menu_headspa">Head Spa</div>
+          <div class="menu-item">
+            <div>
+              <div class="menu-item-name" data-i18n="menu_headspa">Head Spa</div>
+            </div>
+            <span class="menu-item-dots"></span>
+            <div class="menu-item-price">$30</div>
           </div>
-          <span class="menu-item-dots"></span>
-          <div class="menu-item-price">$30</div>
         </div>
       </div>
 
@@ -322,22 +316,19 @@
 
       <div class="gallery-grid reveal-stagger">
         <div class="gallery-item">
-          <img src="images/gallery-1.png" alt="Hair style 1" loading="lazy" />
+          <img src="images/model-1.jpg" alt="Hair style 1" loading="lazy" />
         </div>
         <div class="gallery-item">
-          <img src="images/gallery-2.png" alt="Hair style 2" loading="lazy" />
+          <img src="images/model-2.jpg" alt="Hair style 2" loading="lazy" />
         </div>
         <div class="gallery-item">
-          <img src="images/gallery-3.png" alt="Hair style 3" loading="lazy" />
+          <img src="images/model-3.png" alt="Hair style 3" loading="lazy" />
         </div>
         <div class="gallery-item">
-          <img src="images/gallery-4.png" alt="Hair style 4" loading="lazy" />
+          <img src="images/model-4.jpg" alt="Hair style 4" loading="lazy" />
         </div>
         <div class="gallery-item">
-          <img src="images/gallery-5.png" alt="Hair style 5" loading="lazy" />
-        </div>
-        <div class="gallery-item">
-          <img src="images/gallery-6.png" alt="Hair style 6" loading="lazy" />
+          <img src="images/model-5.jpg" alt="Hair style 5" loading="lazy" />
         </div>
       </div>
 
@@ -370,9 +361,9 @@
       </div>
 
       <p class="booking-policy reveal" data-i18n="booking_policy">Cancellation Policy:
-- Until 1 day before: Free
-- Same-day: 100% charge
-- Rescheduling: Please contact us as early as possible.</p>
+        - Until 1 day before: Free
+        - Same-day: 100% charge
+        - Rescheduling: Please contact us as early as possible.</p>
     </div>
   </section>
 
@@ -414,13 +405,12 @@
               <h3 data-i18n="access_hours_title">Business Hours</h3>
             </div>
             <ul class="hours-list">
-              <li><span data-i18n="access_hours_mon">Mon</span><span data-i18n="access_hours_daily">9:00 AM – 6:00 PM</span></li>
-              <li><span data-i18n="access_hours_tue">Tue</span><span data-i18n="access_hours_daily">9:00 AM – 6:00 PM</span></li>
-              <li><span data-i18n="access_hours_wed">Wed</span><span data-i18n="access_hours_daily">9:00 AM – 6:00 PM</span></li>
-              <li><span data-i18n="access_hours_thu">Thu</span><span data-i18n="access_hours_daily">9:00 AM – 6:00 PM</span></li>
-              <li><span data-i18n="access_hours_fri">Fri</span><span data-i18n="access_hours_daily">9:00 AM – 6:00 PM</span></li>
-              <li><span data-i18n="access_hours_sat">Sat</span><span data-i18n="access_hours_daily">9:00 AM – 6:00 PM</span></li>
-              <li><span data-i18n="access_hours_sun">Sun</span><span data-i18n="access_hours_daily">9:00 AM – 6:00 PM</span></li>
+              <li><span data-i18n="access_hours_weekdays">Mon - Fri</span><span data-i18n="access_hours_daily">9:00 AM –
+                  6:00
+                  PM</span></li>
+              <li><span data-i18n="access_hours_weekends">Sat, Sun, Holidays</span><span
+                  data-i18n="access_hours_daily">9:00 AM – 6:00
+                  PM</span></li>
             </ul>
           </div>
 

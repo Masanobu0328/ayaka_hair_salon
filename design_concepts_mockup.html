@@ -94,21 +94,21 @@
         }
         .phone-screen::-webkit-scrollbar { display: none; }
 
-        /* --- Scoped Theme Variables --- */
+        /* --- Scoped Theme Variables (UPDATED COLORS) --- */
         .theme-a {
-            --primary: #3E5C4A; /* Green */
-            --accent: #E67E22;  /* Orange */
-            --bg: #FDFDFB;      /* Cream */
+            --primary: #769771; /* Exact Sage Green */
+            --accent: #B36D41;  /* Exact Terracotta Orange */
+            --bg: #FDFDFB;
             --text: #2C3E50;
-            --overlay: rgba(62, 92, 74, 0.55);
+            --overlay: rgba(118, 151, 113, 0.55);
         }
 
         .theme-b {
-            --primary: #5D4037; /* Brown */
-            --accent: #D35400;  /* Deep Orange */
-            --bg: #F5F1E9;      /* Sand */
+            --primary: #D6C6A5; /* Exact Beige Brown */
+            --accent: #C1693C;  /* Exact Burnt Orange */
+            --bg: #F5F1E9;
             --text: #3E2723;
-            --overlay: rgba(93, 64, 55, 0.65);
+            --overlay: rgba(214, 198, 165, 0.65);
         }
 
         /* --- UI Components --- */
@@ -128,7 +128,11 @@
         .m-hamburger span { display: block; height: 1.5px; width: 100%; background: #fff; }
 
         .m-hero { height: 720px; width: 100%; position: relative; display: flex; align-items: center; justify-content: center; text-align: center; padding: 0 2rem; }
-        .m-hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('images/hero.png'); background-size: cover; background-position: center; }
+        .m-hero-bg { 
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+            background-image: url('https://images.unsplash.com/photo-1562322140-8baeececf3df?q=80&w=1000&auto=format&fit=crop'); 
+            background-size: cover; background-position: center; 
+        }
         .m-hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: var(--overlay); }
         
         .m-hero-content { position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center; }
@@ -191,7 +195,7 @@
         .swatch-label { font-size: 0.7rem; color: #888; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
         .design-intent { font-size: 0.9rem; color: #555; line-height: 1.8; padding-top: 1.5rem; border-top: 1px solid #f0f0f0; margin-top: 1rem; }
 
-        .concept-title { font-family: var(--font-heading); font-size: 2rem; margin: 4.5rem 0 2rem; text-align: center; font-weight: 600; }
+        .concept-title { font-family: var(--font-heading); font-size: 2.2rem; margin: 4.5rem 0 2rem; text-align: center; font-weight: 600; }
 
     </style>
 </head>
@@ -200,7 +204,7 @@
 
     <header class="presentation-header">
         <h1>Design System Mockups</h1>
-        <p>全カラーコードの解説と、コンセプトごとのメインカラーを活かした予約セクションを配置しました。</p>
+        <p>以前の完璧な再現レイアウトを維持し、配色のみを提供画像から抽出した正確なくすみカラーに更新しました。</p>
     </header>
 
     <!-- CONCEPT A -->
@@ -241,7 +245,7 @@
             <!-- Reservation Emphasis (GREEN BACKGROUND for Concept A) -->
             <section class="m-section-primary">
                 <span class="m-section-label">Reservation</span>
-                <h2 class="m-section-title">Book an Appointment</h2>
+                <h2 class="m-section-title">Book Appointment</h2>
                 <p class="m-section-subtitle">Reserve your spot online — quick and easy.</p>
                 <a href="#" class="m-btn">Book Appointment</a>
                 <p style="font-size: 0.75rem; margin-top: 2rem; opacity: 0.85;">Cancellation Policy:<br>1日前まで無料 / 当日は100%</p>
@@ -266,42 +270,22 @@
 
     <!-- Color Info A -->
     <div class="color-info-card">
-        <h2>Concept A: Color Palette</h2>
+        <h2>Concept A: Color Info</h2>
         <div class="swatch-item">
-            <div class="swatch-box" style="background: #3E5C4A;"></div>
+            <div class="swatch-box" style="background: #769771;"></div>
             <div class="swatch-text">
                 <span class="swatch-label">Primary Color</span>
-                <span class="swatch-hex">#3E5C4A</span>
-                <span style="font-size: 0.75rem; color: #666;">信頼感と自然を感じさせる深い緑。予約エリアの背景に使用。</span>
+                <span class="swatch-hex">#769771</span>
+                <span style="font-size: 0.75rem; color: #666;">提供画像から抽出。柔らかく落ち着いたセージグリーン。</span>
             </div>
         </div>
         <div class="swatch-item">
-            <div class="swatch-box" style="background: #E67E22;"></div>
+            <div class="swatch-box" style="background: #B36D41;"></div>
             <div class="swatch-text">
                 <span class="swatch-label">Accent Color</span>
-                <span class="swatch-hex">#E67E22</span>
-                <span style="font-size: 0.75rem; color: #666;">ボタンや仕切り線に使用。フレッシュな活力を与えます。</span>
+                <span class="swatch-hex">#B36D41</span>
+                <span style="font-size: 0.75rem; color: #666;">提供画像から抽出。柿色のような深みのあるオレンジ。</span>
             </div>
-        </div>
-        <div class="swatch-item">
-            <div class="swatch-box" style="background: #FDFDFB;"></div>
-            <div class="swatch-text">
-                <span class="swatch-label">Background Color</span>
-                <span class="swatch-hex">#FDFDFB</span>
-                <span style="font-size: 0.75rem; color: #666;">清潔感のある暖かいクリーム。広がりと落ち着きを演出。</span>
-            </div>
-        </div>
-        <div class="swatch-item">
-            <div class="swatch-box" style="background: rgba(62, 92, 74, 0.55);"></div>
-            <div class="swatch-text">
-                <span class="swatch-label">Overlay Color</span>
-                <span class="swatch-hex">rgba(62, 92, 74, 0.55)</span>
-                <span style="font-size: 0.75rem; color: #666;">ヒーロー画像の透かしに使用。写真にブランドの統一感を与えます。</span>
-            </div>
-        </div>
-        <div class="design-intent">
-            <strong>Design Strategy:</strong><br>
-            「ボタニカル＆フレッシュ」を掲げ、予約エリアにブランドの象徴である深緑を大胆に配置。信頼できる「プロの技術」を強調した構成です。
         </div>
     </div>
 
@@ -344,7 +328,7 @@
             <!-- Reservation Emphasis (BROWN BACKGROUND for Concept B) -->
             <section class="m-section-primary">
                 <span class="m-section-label">Reservation</span>
-                <h2 class="m-section-title">Book an Appointment</h2>
+                <h2 class="m-section-title">Book Appointment</h2>
                 <p class="m-section-subtitle">Reserve your spot online — quick and easy.</p>
                 <a href="#" class="m-btn">Book Appointment</a>
                 <p style="font-size: 0.75rem; margin-top: 2rem; opacity: 0.85;">Cancellation Policy:<br>1日前まで無料 / 当日は100%</p>
@@ -369,42 +353,22 @@
 
     <!-- Color Info B -->
     <div class="color-info-card">
-        <h2>Concept B: Color Palette</h2>
+        <h2>Concept B: Color Info</h2>
         <div class="swatch-item">
-            <div class="swatch-box" style="background: #5D4037;"></div>
+            <div class="swatch-box" style="background: #D6C6A5;"></div>
             <div class="swatch-text">
                 <span class="swatch-label">Primary Color</span>
-                <span class="swatch-hex">#5D4037</span>
-                <span style="font-size: 0.75rem; color: #666;">温かみと安心感のある深いブラウン。予約エリアの背景に使用。</span>
+                <span class="swatch-hex">#D6C6A5</span>
+                <span style="font-size: 0.75rem; color: #666;">提供画像から抽出。明るく上品なサンドベージュ。</span>
             </div>
         </div>
         <div class="swatch-item">
-            <div class="swatch-box" style="background: #D35400;"></div>
+            <div class="swatch-box" style="background: #C1693C;"></div>
             <div class="swatch-text">
                 <span class="swatch-label">Accent Color</span>
-                <span class="swatch-hex">#D35400</span>
-                <span style="font-size: 0.75rem; color: #666;">テラコッタ調のオレンジ。深みのあるアクセントとして機能。</span>
+                <span class="swatch-hex">#C1693C</span>
+                <span style="font-size: 0.75rem; color: #666;">提供画像から抽出。温かみのあるバーントオレンジ。</span>
             </div>
-        </div>
-        <div class="swatch-item">
-            <div class="swatch-box" style="background: #F5F1E9;"></div>
-            <div class="swatch-text">
-                <span class="swatch-label">Background Color</span>
-                <span class="swatch-hex">#F5F1E9</span>
-                <span style="font-size: 0.75rem; color: #666;">落ち着いたサンドベージュ。リラックス効果を高めます。</span>
-            </div>
-        </div>
-        <div class="swatch-item">
-            <div class="swatch-box" style="background: rgba(93, 64, 55, 0.65);"></div>
-            <div class="swatch-text">
-                <span class="swatch-label">Overlay Color</span>
-                <span class="swatch-hex">rgba(93, 64, 55, 0.65)</span>
-                <span style="font-size: 0.75rem; color: #666;">ブラウン調の透かし。写真にアンティークで上質な雰囲気を与えます。</span>
-            </div>
-        </div>
-        <div class="design-intent">
-            <strong>Design Strategy:</strong><br>
-            「アース＆ウォーム」をテーマに、予約エリアを落ち着いた茶色で構成。ゆったりとしたプライベートな「自分時間」を大切にする層へ向けたデザインです。
         </div>
     </div>
 

@@ -10,19 +10,31 @@
    ================================================ */
 :root {
   /* Brand Colors */
-  --color-primary: #3E5C4A;
-  --color-primary-dark: #2D4537;
-  --color-primary-light: #5A7D66;
-  --color-primary-rgb: 62, 92, 74;
+  /* --- PREVIOUS COLORS (Fallback / Concept Backup) ---
+     Primary: #3E5C4A (Dark Green)
+     --color-primary-dark: #2D4537;
+     --color-primary-light: #5A7D66;
+     --color-primary-rgb: 62, 92, 74;
+
+     Accent: #D4AF37 (Gold)
+     --color-accent-light: #E8D48B;
+     --color-accent-rgb: 212, 175, 55;
+     --------------------------------------------------- */
+
+  --color-primary: #769771;
+  --color-primary-dark: #5A7A55;
+  --color-primary-light: #92B48D;
+  --color-primary-rgb: 118, 151, 113;
 
   --color-background: #FDFDFB;
   --color-surface: #FFFFFF;
   --color-surface-alt: #F7F6F3;
   --color-text: #2C3E50;
   --color-text-light: #6B7B8D;
-  --color-accent: #D4AF37;
-  --color-accent-light: #E8D48B;
-  --color-accent-rgb: 212, 175, 55;
+
+  --color-accent: #B36D41;
+  --color-accent-light: #D18A5D;
+  --color-accent-rgb: 179, 109, 65;
 
   --color-border: #E8E6E1;
   --color-error: #C0392B;
@@ -429,7 +441,7 @@ section {
 .hero-bg {
   position: absolute;
   inset: 0;
-  background: url('../images/hero.png') center/cover no-repeat;
+  background: url('../images/hero-bg.jpg') center/cover no-repeat;
   z-index: 0;
 }
 
@@ -561,12 +573,14 @@ section {
 
 .value-card {
   text-align: center;
-  padding: 3rem 2rem;
+  padding: 2.5rem 1.75rem;
   background: var(--color-surface);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-xs);
   transition: all var(--transition);
   border: 1px solid transparent;
+  display: flex;
+  flex-direction: column;
 }
 
 .value-card:hover {
@@ -575,17 +589,24 @@ section {
   border-color: rgba(var(--color-accent-rgb), 0.2);
 }
 
-.value-icon {
-  width: 56px;
-  height: 56px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 1.5rem;
-  background: linear-gradient(135deg, rgba(var(--color-primary-rgb), 0.08), rgba(var(--color-accent-rgb), 0.08));
+.value-img-wrapper {
+  width: 100%;
+  aspect-ratio: 4/3;
+  margin-bottom: 2rem;
   border-radius: var(--radius-md);
-  font-size: 1.5rem;
-  color: var(--color-primary);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.value-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.value-card:hover .value-img {
+  transform: scale(1.05);
 }
 
 .value-card h3 {
@@ -602,34 +623,93 @@ section {
 }
 
 /* ================================================
+   IMAGE BANNERS (Menu & Headspa)
+   ================================================ */
+.content-banner-wrapper {
+  margin: 3.5rem auto 1rem;
+  max-width: 900px;
+  width: 100%;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+}
+
+.menu-banner-wrapper {
+  margin: 0 auto 3rem;
+  max-width: 900px;
+  width: 100%;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.content-banner-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform var(--transition-slow);
+}
+
+.content-banner-wrapper:hover .content-banner-img,
+.menu-banner-wrapper:hover .content-banner-img {
+  transform: scale(1.03);
+}
+
+/* ================================================
    MENU
    ================================================ */
 .menu-tabs {
   display: flex;
-  justify-content: center;
-  gap: 0.5rem;
-  margin-bottom: 3rem;
-  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 0.2rem;
+  margin: 0 auto;
+  max-width: 900px;
+  flex-wrap: nowrap;
+  padding: 0 1rem;
+}
+
+.menu-tabs::-webkit-scrollbar {
+  display: none;
 }
 
 .menu-tab {
-  padding: 0.55rem 1.6rem;
-  border: 2px solid var(--color-border);
-  background: transparent;
+  padding: 0.8rem 1.8rem;
+  border: none;
+  background: rgba(var(--color-primary-rgb), 0.08);
   color: var(--color-text-light);
-  border-radius: var(--radius-full);
-  font-size: 0.9rem;
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  font-size: 0.95rem;
   font-weight: 600;
   cursor: pointer;
   transition: all var(--transition);
   font-family: var(--font-body);
+  white-space: nowrap;
+  position: relative;
+  z-index: 0;
+  top: 1px;
 }
 
 .menu-tab.active,
 .menu-tab:hover {
-  background: var(--color-primary);
-  color: white;
-  border-color: var(--color-primary);
+  background: var(--color-surface);
+  color: var(--color-primary);
+}
+
+.menu-tab.active {
+  z-index: 2;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.menu-content-box {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 3.5rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .menu-category {
@@ -1154,13 +1234,24 @@ section {
     font-size: clamp(2.2rem, 8vw, 3rem);
   }
 
+  .section-subtitle {
+    font-size: 0.92rem;
+    padding: 0 1rem;
+    line-height: 1.6;
+  }
+
   .menu-tabs {
-    gap: 0.35rem;
+    gap: 0.2rem;
+    padding: 0 0.5rem;
   }
 
   .menu-tab {
-    padding: 0.45rem 1.1rem;
-    font-size: 0.82rem;
+    padding: 0.5rem 0.1rem;
+    font-size: 0.75rem;
+    flex: 1;
+    text-align: center;
+    white-space: nowrap;
+    min-width: 0;
   }
 
   .booking-embed {
