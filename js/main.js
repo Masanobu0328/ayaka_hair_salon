@@ -187,13 +187,13 @@ const translations = {
     cat_straight_title: 'Straight',
     menu_point_straight: 'Point Straight',
     menu_full_straight: 'Full Straight',
-    menu_acid_treatment: 'Acid Hair Treatment',
+    menu_acid_treatment: 'Acid Heat Treatment (酸熱)',
 
     cat_others_title: 'Others',
-    menu_treatment: 'Treatment',
+    menu_treatment: 'Quick Care',
     menu_headspa: 'Head Spa',
 
-    menu_note: '※ S = Short / M = Medium / L = Long — For design color, please consult.',
+    menu_note: '※ S = Short / M = Medium / L = Long — For highlights, balayage, or creative colors, please contact us.',
 
     // Gallery
     gallery_label: 'Gallery',
@@ -288,10 +288,10 @@ const translations = {
     menu_acid_treatment: '酸熱トリートメント',
 
     cat_others_title: 'その他',
-    menu_treatment: 'トリートメント',
+    menu_treatment: 'クイックケア（トリートメント）',
     menu_headspa: 'ヘッドスパ',
 
-    menu_note: '※ S＝ショート / M＝ミディアム / L＝ロング — デザインカラーはご相談ください。',
+    menu_note: '※ S＝ショート / M＝ミディアム / L＝ロング — ハイライト、バレイヤージュ等のデザインカラーはご相談ください。',
 
     // Gallery
     gallery_label: 'ギャラリー',

@@ -783,6 +783,17 @@ section {
   white-space: nowrap;
 }
 
+.menu-item-price.price-sm {
+  font-size: 0.95rem;
+  font-family: var(--font-body);
+}
+
+@media (max-width: 480px) {
+  .menu-item-price.price-sm {
+    font-size: 0.82rem;
+  }
+}
+
 .menu-note {
   text-align: center;
   margin-top: 2rem;
