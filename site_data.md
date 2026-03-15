@@ -16,7 +16,7 @@
 
 ## 予約方法
 - **方式**: Square Appointments 埋め込みウィジェット（iframe）
-- **Square予約URL**: （Ayakaさんから取得予定）
+- **Square予約URL**: https://book.squareup.com/appointments/8xqh1hifu7vf7u/location/LZ2Y8N34E9YK6/services
 
 ## メニュー（設計書より）
 
