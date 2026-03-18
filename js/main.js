@@ -220,7 +220,7 @@ const translations = {
     access_parking_title: 'Parking',
     access_parking_desc: 'Please use the available street parking near the salon.',
     access_payment_title: 'Payment',
-    access_payment_desc: 'Cash Only',
+    access_payment_desc: 'Cash / Transfer\n※ Transfer: +15% tax',
     access_hours_closed: 'Closed',
 
     // Footer
@@ -318,7 +318,7 @@ const translations = {
     access_parking_title: '駐車場',
     access_parking_desc: 'お近くの路上駐車スペースをご利用ください。',
     access_payment_title: 'お支払い方法',
-    access_payment_desc: '現金のみ',
+    access_payment_desc: '現金 / トランスファー\n※ トランスファーの場合は tax 15%',
     access_hours_closed: '定休日',
 
     // Footer
