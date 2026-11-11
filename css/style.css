@@ -792,6 +792,24 @@ section {
   .menu-item-price.price-sm {
     font-size: 0.82rem;
   }
+
+  /* S/M/L price rows: name on its own line, price below it (prevents overflow on narrow phones) */
+  .menu-item:has(.price-sm) {
+    flex-wrap: wrap;
+    row-gap: 0.35rem;
+  }
+
+  .menu-item:has(.price-sm) > div:first-child {
+    flex: 1 1 100%;
+  }
+
+  .menu-item:has(.price-sm) .menu-item-dots {
+    display: none;
+  }
+
+  .menu-item:has(.price-sm) .menu-item-price {
+    margin-left: auto;
+  }
 }
 
 .menu-note {
