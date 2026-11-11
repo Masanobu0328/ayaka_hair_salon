@@ -180,12 +180,10 @@ const translations = {
     menu_fullbleach: 'Full Bleach',
 
     cat_perm_title: 'Perm',
-    menu_point_perm: 'Point Perm',
     menu_normal_perm: 'Normal Perm',
     menu_twist_spiral: 'Twist / Spiral Perm',
 
     cat_straight_title: 'Straight',
-    menu_point_straight: 'Point Straight',
     menu_full_straight: 'Full Straight',
     menu_acid_treatment: 'Acid Heat Treatment (酸熱)',
 
@@ -278,12 +276,10 @@ const translations = {
     menu_fullbleach: 'フルブリーチ',
 
     cat_perm_title: 'パーマ',
-    menu_point_perm: 'ポイントパーマ',
     menu_normal_perm: 'ノーマルパーマ',
     menu_twist_spiral: 'ツイスト / スパイラルパーマ',
 
     cat_straight_title: 'ストレート',
-    menu_point_straight: 'ポイントストレート',
     menu_full_straight: 'フルストレート',
     menu_acid_treatment: '酸熱トリートメント',
 
